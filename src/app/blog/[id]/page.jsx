@@ -117,7 +117,10 @@ const DetailBlogPage = ({ params }) => {
           <p>Updated At: {new Date(blog.updatedAt).toLocaleString()}</p>
           <div className={styles.groupBtn}>
             <EditBtn onClick={() => setIsEditing(true)} />
-            <DeleteBtn />
+            <DeleteBtn
+              blogId={blog._id}
+              onDelete={() => (window.location.href = '/blog')}
+            />
           </div>
         </>
       )}

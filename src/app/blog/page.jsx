@@ -5,7 +5,6 @@ import Loading from '../components/loading/Loading';
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './blog.module.css';
-import EditBtn from '../components/editbtn/EditBtn';
 
 const blogPage = () => {
   const [blogs, setBlogs] = useState([]);
