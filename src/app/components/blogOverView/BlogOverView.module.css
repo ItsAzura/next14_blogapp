@@ -1,0 +1,24 @@
+.btnAdd {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #d90429;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnAdd:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px #d90429, 0 0 15px #d90429, 0 0 30px #d90429;
+}
