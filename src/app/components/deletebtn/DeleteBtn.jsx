@@ -3,17 +3,20 @@ import styles from './DeleteBtn.module.css';
 import Link from 'next/link';
 
 const DeleteBtn = ({ blogId, onDelete }) => {
+  //Hàm xử lý delete blog
   const handleDelete = async () => {
     try {
+      //Fetch để xóa blog
       const res = await fetch('/api/deleteblog', {
-        method: 'DELETE',
+        method: 'DELETE', //Phương thức DELETE
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ _id: blogId }),
+        body: JSON.stringify({ _id: blogId }), //Gửi _id của blog cần xóa
       });
+      //Kiểm tra xem xóa có thành công không
       if (res.ok) {
-        onDelete();
+        onDelete(); //Gọi hàm onDelete để cập nhật lại danh sách blog
       } else {
         console.error('Failed to delete blog');
       }
@@ -22,7 +25,11 @@ const DeleteBtn = ({ blogId, onDelete }) => {
     }
   };
   return (
-    <div className={styles.editBtn} onClick={handleDelete}>
+    <div
+      className={styles.editBtn}
+      //gọi hàm handleDelete khi click vào nút
+      onClick={handleDelete}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

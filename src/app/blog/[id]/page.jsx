@@ -118,8 +118,10 @@ const DetailBlogPage = ({ params }) => {
           <div className={styles.groupBtn}>
             <EditBtn onClick={() => setIsEditing(true)} />
             <DeleteBtn
-              blogId={blog._id}
-              onDelete={() => (window.location.href = '/blog')}
+              blogId={blog._id} //Truyền id của blog cần xóa
+              onDelete={
+                () => (window.location.href = '/blog') //chuyển đến trang /blog sau khi xóa
+              }
             />
           </div>
         </>
