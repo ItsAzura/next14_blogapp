@@ -2,6 +2,7 @@
 import Loading from '@/app/components/loading/Loading';
 import React, { useState, useEffect } from 'react';
 import styles from './blogdetails.module.css';
+import EditBtn from '@/app/components/editbtn/EditBtn';
 
 const DetailBlogPage = ({ params }) => {
   console.log(params);
@@ -41,6 +42,9 @@ const DetailBlogPage = ({ params }) => {
       <p>{blog.content}</p>
       <p>Created At: {new Date(blog.createdAt).toLocaleString()}</p>
       <p>Updated At: {new Date(blog.updatedAt).toLocaleString()}</p>
+      <div className="">
+        <EditBtn />
+      </div>
     </div>
   );
 };

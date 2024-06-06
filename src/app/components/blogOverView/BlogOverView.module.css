@@ -16,9 +16,72 @@
   color: #fff;
   background: #d90429;
   transition: all 0.3s ease-in-out;
+  -webkit-animation: flicker-1 2s linear infinite both;
+  animation: flicker-1 2s linear infinite both;
 }
 
 .btnAdd:hover {
   transform: scale(1.05);
   box-shadow: 0 0 5px #d90429, 0 0 15px #d90429, 0 0 30px #d90429;
+}
+
+@-webkit-keyframes flicker-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  41.99% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.5;
+  }
+  43% {
+    opacity: 0.5;
+  }
+  43.01% {
+    opacity: 1;
+  }
+  47.99% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0.5;
+  }
+  49% {
+    opacity: 0.5;
+  }
+  49.01% {
+    opacity: 1;
+  }
+}
+@keyframes flicker-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  41.99% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.5;
+  }
+  43% {
+    opacity: 0.5;
+  }
+  43.01% {
+    opacity: 1;
+  }
+  47.99% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0.5;
+  }
+  49% {
+    opacity: 0.5;
+  }
+  49.01% {
+    opacity: 1;
+  }
 }
