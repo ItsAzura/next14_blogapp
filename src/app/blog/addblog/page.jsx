@@ -4,14 +4,18 @@ import styles from './AddBlog.module.css';
 import { useRouter } from 'next/navigation';
 
 const AddBlog = () => {
-  const router = useRouter();
+  const router = useRouter(); //Lấy router để chuyển hướng trang
 
+  //Hàm xử lý submit form
   const handleSubmit = async (e) => {
+    //Ngăn chặn form reload trang
     e.preventDefault();
+    //Lấy title và content từ form
     const title = e.target.title.value;
     const content = e.target.content.value;
 
     try {
+      //Fetch để thêm blog mới
       const req = await fetch('/api/addblog', {
         method: 'POST',
         headers: {
@@ -36,7 +40,10 @@ const AddBlog = () => {
   return (
     <div className={styles.container}>
       <h1>Add Blog</h1>
-      <form action="" onSubmit={handleSubmit}>
+      <form
+        action=""
+        onSubmit={handleSubmit} //Gọi hàm handleSubmit khi submit form
+      >
         <label htmlFor="title">Title</label>
         <input type="text" id="title" name="title" placeholder="Title"></input>
         <label htmlFor="content">Content</label>
@@ -47,7 +54,10 @@ const AddBlog = () => {
           cols={30}
           rows={10}
         ></textarea>
-        <button type="submit" value="Submit">
+        <button
+          type="submit"
+          value="Submit" //Thêm type và value cho button
+        >
           Submit
         </button>
       </form>

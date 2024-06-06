@@ -10,10 +10,14 @@ const blogPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //Hàm fetch tất cả blog từ database
   const handleFetchBlogs = async () => {
     try {
+      //Fetch để lấy tất cả blog
       const res = await fetch('/api/getblogs');
+      //Kiểm tra xem fetch có thành công không
       const data = await res.json();
+      //Kiểm tra xem fetch có thành công không
       if (data.data) {
         setBlogs(data.data);
         setLoading(false);
@@ -23,11 +27,12 @@ const blogPage = () => {
     }
   };
 
+  //Gọi hàm handleFetchBlogs khi component được render
   useEffect(() => {
     handleFetchBlogs();
   }, []);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading />; //Nếu đang fetch thì hiển thị loading
 
   return (
     <div className={styles.mainContainer}>
