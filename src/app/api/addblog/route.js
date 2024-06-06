@@ -1,6 +1,7 @@
 import connectToDb from '@/database/db';
 import Blog from '@/models/blog';
 import { NextResponse } from 'next/server';
+import Joi from 'joi';
 
 //Tạo schema để validate dữ liệu
 const AddNewBlog = Joi.object({

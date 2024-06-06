@@ -14,6 +14,6 @@ const BlogSchema = new Schema(
   { timestamps: true }
 );
 
-const Post = models.Post || model('Blog', BlogSchema);
+const Blog = models.Blog || model('Blog', BlogSchema);
 
 export default Blog;
